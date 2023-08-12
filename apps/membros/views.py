@@ -3,8 +3,6 @@ from django.contrib import messages
 from apps.membros.models import Membros
 from apps.membros.forms import MembroForms
 from django.db.models import Func
-from datetime import datetime
-
 
 
 def index(request):
@@ -65,6 +63,7 @@ def excluir(request, id):
         return redirect('consulta')
 
     return render(request, 'membros/excluir.html', {'membro': membro})
+
 
 
 def generate_membros_report(request):

@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from apps.ministerios.models import Codigo_Ministerio
 from apps.ministerios.forms import MinisterioForm
-from apps.ministerios.models import MembroMinisterio
 
 
 def ministerio_consult(request):
