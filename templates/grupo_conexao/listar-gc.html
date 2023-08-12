@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="grupo-conexao" style="margin-left: 5em">
+    <h1>Listar Grupos de Conexão</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Líder</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grupo_conexao in grupos_conexao %}
+            <tr>
+                <td>{{ grupo_conexao.nome_gc }}</td>
+                <td>{{ grupo_conexao.lider }}</td>
+                <td>
+                    <a href="{% url 'grupo_conexao_update' pk=grupo_conexao.pk %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'grupo_conexao_delete' pk=grupo_conexao.pk %}" class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+</main>
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Relatório de Ministérios</h1>
+
+    <form method="get" action="">
+        <div class="form-group">
+            <label for="filtro_nome">Filtrar por Nome:</label>
+            <input type="text" class="form-control" name="filtro_nome" id="filtro_nome" value="{{ filtro_nome }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ministério</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ministerio in ministerios %}
+            <tr>
+                <td>{{ ministerio.ministerio }}</td>
+                <td>{{ ministerio.get_situacao_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

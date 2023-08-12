@@ -1,0 +1,17 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="membros" style="margin-left: 5em">
+    <h2>Excluir Membro</h2>
+    <p>Deseja realmente excluir o membro "{{ membro.nome_completo }}"?</p>
+    <form action="{% url 'excluir' membro.id %}" method="POST">
+        {% csrf_token %}
+        <div class="row mr-5 mb-5">
+            <div class="col-12 col-lg-12">
+                <button class="btn btn-danger col-12 col-lg-12" type="submit">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

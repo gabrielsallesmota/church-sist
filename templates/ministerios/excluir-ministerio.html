@@ -1,0 +1,16 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="membros" style="margin-left: 5em">
+    <h2>Excluir Ministério</h2>
+    <div class="alert alert-danger">
+        <p>Você tem certeza de que deseja excluir o Ministério "{{ ministerio.nome }}"?</p>
+    </div>
+    <form method="POST" action="{% url 'ministerio_delete' pk=ministerio.pk %}" class="mb-3">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="{% url 'ministerio_consult' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</section>
+{% endblock %}

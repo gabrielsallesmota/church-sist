@@ -1,0 +1,18 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="grupo-conexao" style="margin-left: 5em">
+    <h1>Deletar Grupo de Conexão</h1>
+    <p>Tem certeza que deseja deletar o grupo de conexão "{{ grupo_conexao.nome }}"?</p>
+    <form action="{% url 'grupo_conexao_delete' pk=grupo_conexao.pk %}" method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Deletar</button>
+        <a href="{% url 'grupo_conexao_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</section>
+</main>
+</div>
+</body>
+
+{% endblock %}

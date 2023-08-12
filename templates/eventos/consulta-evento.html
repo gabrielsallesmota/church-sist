@@ -1,0 +1,45 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="membros" style="margin-left: 5em">
+    <h2>Consultar Eventos</h2>
+    <form method="GET" action="{% url 'evento_list' %}" class="mb-3">
+        <div class="row mr-3">
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="nome" placeholder="Filtrar por nome" value="{{ filtro_nome }}">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <a href="{% url 'evento_list' %}" class="btn btn-secondary">Limpar</a>
+            </div>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome Evento</th>
+                <th>Responsavel</th>
+                <th>Data Evento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for evento in evento %}
+            <tr>
+                <td>{{ evemto.id }}</td>
+                <td>{{ evento.nome_evento }}</td>
+                <td>{{ evento.responsavel }}</td>
+                <td>{{ evento.data_evento }}</td>
+                <td>
+                    <a href="{% url 'evento_update' evento.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'evento_delete' evento.id %}" class="btn btn-danger">Excluir</a>
+                    
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
+

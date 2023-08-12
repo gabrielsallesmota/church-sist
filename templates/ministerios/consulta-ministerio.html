@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="ministerios" style="margin-left: 5em">
+    <h2>Consulta de Ministérios</h2>
+    <form method="GET" action="{% url 'ministerio_consult' %}" class="mb-3">
+        <div class="row mr-3">
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="nome" placeholder="Filtrar por nome" value="{{ filtro_nome }}">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <a href="{% url 'ministerio_consult' %}" class="btn btn-secondary">Limpar</a>
+            </div>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ministerio</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ministerios in ministerios %}
+            <tr>
+                <td>{{ ministerios.id }}</td>
+                <td>{{ ministerios.ministerio }}</td>
+                <td>
+                    <a href="{% url 'ministerio_update' pk=ministerios.pk %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'ministerio_delete' pk=ministerios.pk %}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

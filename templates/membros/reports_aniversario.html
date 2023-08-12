@@ -1,0 +1,38 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Relatório de Aniversariantes</h1>
+
+    <form method="get" action="">
+        <div class="form-group">
+            <label for="filtro_mes">Filtrar por Mês (Ex.: 01 - Janeiro):</label>
+            <input type="number" class="form-control" name="filtro_mes" id="filtro_mes" value="{{ filtro_mes }}">
+        </div>
+        <div class="form-group">
+            <label for="filtro_dia">Filtrar por Dia:</label>
+            <input type="number" class="form-control" name="filtro_dia" id="filtro_dia" value="{{ filtro_dia }}">
+        </div>
+        <button type="submit" name="gerar_relatorio" value="true" class="btn btn-primary">Gerar Relatório</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for membro in aniversariantes %}
+            <tr>
+                <td>{{ membro.nome_completo }}</td>
+                <td>{{ membro.data_nascimento|date:"d/m" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

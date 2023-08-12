@@ -1,0 +1,15 @@
+-> Incluir no setting.py
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+-> Em settings.py -> TEMPLATES
+
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+-> Passo a passo:
+    -> Criar app    -- python manage.py startapp nome_do_app
+    -> Adicionar o app no settings.py       -- 'apps.nome_do_app'
+    -> Criar models.py

@@ -1,0 +1,28 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="grupo-conexao" style="margin-left: 5em">
+    <form action="{% url 'grupo_conexao_create' %}" method="POST">
+        {% csrf_token %}
+        <div class="row mr-3">
+            {% for field in form.visible_fields %}
+            <div class="col-6 col-lg-6 mb-3" style="margin-bottom: 10px">
+                <label for="{{ field.id_for_label }}" style="color:#D9D9D9; margin-bottom: 5px;">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row mr-5 mb-5">
+            <div class="col-12 col-lg-12">
+                <button class="btn btn-success col-12 col-lg-12" type="submit">Cadastrar Grupo de Conexão</button>
+            </div>
+        </div>
+    </form>
+</section>
+</main>
+</div>
+</body>
+
+{% endblock %}

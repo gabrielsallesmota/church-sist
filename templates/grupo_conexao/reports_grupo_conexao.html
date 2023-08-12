@@ -1,0 +1,36 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Relatório de Grupos de Conexão</h1>
+
+    <form method="get" action="">
+        <div class="form-group">
+            <label for="filtro_nome">Filtrar por Nome:</label>
+            <input type="text" class="form-control" name="filtro_nome" id="filtro_nome" value="{{ filtro_nome }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome do Grupo</th>
+                <th>Endereço</th>
+                <th>Líder</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grupo in grupos %}
+            <tr>
+                <td>{{ grupo.nome_gc }}</td>
+                <td>{{ grupo.endereco }}</td>
+                <td>{{ grupo.lider }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

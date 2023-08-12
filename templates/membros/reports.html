@@ -1,0 +1,56 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Relatório de Membros</h1>
+
+    <form method="get" action="">
+        <div class="form-group">
+            <label for="filtro_campo">Filtrar por:</label>
+            <select class="form-control" name="filtro_campo" id="filtro_campo">
+                <option value="nome_completo">Nome</option>
+                <option value="email">Email</option>
+                <option value="telefone">Telefone</option>
+                <!-- Adicione mais opções para outros campos -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="filtro_valor">Valor do Filtro:</label>
+            <input type="text" class="form-control" name="filtro_valor" id="filtro_valor" value="{{ filtro_valor }}">
+        </div>
+        <button type="submit" name="gerar_relatorio" value="true" class="btn btn-primary">Filtrar</button>
+    </form>
+
+    {% if membros %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <!-- Adicione mais cabeçalhos para outros campos -->
+                <th>Data de Nascimento</th>
+                <th>Endereço</th>
+                <!-- Adicione mais cabeçalhos para outros campos -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for membro in membros %}
+            <tr>
+                <td>{{ membro.nome_completo }}</td>
+                <td>{{ membro.email }}</td>
+                <td>{{ membro.telefone }}</td>
+                <!-- Adicione mais colunas para outros campos -->
+                <td>{{ membro.data_nascimento }}</td>
+                <td>{{ membro.endereco }}</td>
+                <!-- Adicione mais colunas para outros campos -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Nenhum membro encontrado com os filtros selecionados.</p>
+    {% endif %}
+</div>
+{% endblock %}
