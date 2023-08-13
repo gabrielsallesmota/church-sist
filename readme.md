@@ -24,8 +24,8 @@ Um protótipo navegável do Church Sist pode ser visualizado [aqui](https://driv
 
 ## Instalação
 
-1. Clone o repositório do Church CAD: `git clone https://github.com/gabrielsallesmota/church-cad.git`
-2. Acesse o diretório do projeto: `cd church-cad`
+1. Clone o repositório do Church Sist: `git clone https://github.com/gabrielsallesmota/church-sist.git`
+2. Acesse o diretório do projeto: `cd church-sist`
 3. Instale as dependências do Python: `pip install -r requirements.txt`
 4. Execute as migrações do banco de dados: `python manage.py migrate`
 5. Inicie o servidor local: `python manage.py runserver`
