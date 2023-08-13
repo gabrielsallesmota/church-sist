@@ -1,12 +1,12 @@
-# Church CAD
+# Church Sist
 
-O Church CAD é um sistema de cadastro de membros e ministérios para igrejas. Ele permite que você mantenha um registro organizado dos membros da igreja, suas informações pessoais e seus ministérios de atuação. 
+O Church Sist é um sistema de cadastro de membros e ministérios para igrejas. Ele permite que você mantenha um registro organizado dos membros da igreja, suas informações pessoais e seus ministérios de atuação. 
 
 Ele foi desenvolvido a fim acadêmico pelos alunos Jéssica Becaro Janardi Mota e Gabriel Salles Mota, do curso de Pós Graduação em Engenharia de Software da PUC Minas.
 
 ## Protótipo Navegável
 
-Um protótipo navegável do Church CAD pode ser visualizado [aqui](https://drive.google.com/file/d/1iI_JcyJSNRt-harTpCjV5z0Z_XKPJutK/view?usp=sharing).
+Um protótipo navegável do Church Sist pode ser visualizado [aqui](https://drive.google.com/drive/folders/1vmUiV4ozWcZdUFL1mOCh0w1ULUGFnzJT?usp=drive_link).
 
 ## Recursos
 
